@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import '../style/index.css';
+import TopBanner from './components/top_banner';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+
+class App extends Component {
+  render() {
+    return <div>
+      <TopBanner />
+      </div>
+  }
+}
+
+ReactDOM.render(<App />,document.querySelector('.root'));
