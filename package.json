@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "youtube-api-search": "0.0.5",
+    "ytsearch": "^1.0.4"
   },
   "devDependencies": {},
   "scripts": {
