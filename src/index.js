@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../style/index.css';
+import YTSearch from 'youtube-api-search';
 import TopBanner from './components/top_banner';
 import VideoDetail from './components/video_detail';
-import YTSearch from 'youtube-api-search';
+import Imageslot from './components/Image_Slot';
 
 //api key for youtube
 const API_KEY='AIzaSyDgTjJToRF0sC39Bt45BD960ru0Ax7j8FE';
@@ -29,9 +30,13 @@ class App extends Component {
   }
 
 
+
   render() {
     return <div>
-      <TopBanner />
+      <div id="wrapper">
+        <TopBanner id="second" />
+        <Imageslot id="first" />
+      </div>
       <VideoDetail video={this.state.selectedVideo} />
       </div>
   }
