@@ -8,6 +8,7 @@ import Imageslot from './components/Image_Slot';
 import VideoList from './components/video_list'
 import SearchBar from './components/search_bar';
 import _ from 'lodash';
+import {Router,Route, browserHistory} from 'react-router';
 
 
 //api key for youtube
