@@ -6,12 +6,15 @@ class Imageslot extends Component{
     fileSelectHandler = event => {
       console.log(event);
     }
+    
+    onclickfunction(){
+      console.log("Image clicked");
+    }
 
   render(){
     return(
-      <div className="Image-Slot">
-        <img src={logo} alt="logo" />
-        <input type="file" onChange={this.fileSelectHandler}/>
+      <div className="image_Slot">
+        <button><img src={logo} alt="logo" onClick={this.onclickfunction} /></button>
       </div>
     );
   }

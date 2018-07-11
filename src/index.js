@@ -5,6 +5,10 @@ import YTSearch from 'youtube-api-search';
 import TopBanner from './components/top_banner';
 import VideoDetail from './components/video_detail';
 import Imageslot from './components/Image_Slot';
+import VideoList from './components/video_list'
+import SearchBar from './components/search_bar';
+import _ from 'lodash';
+
 
 //api key for youtube
 const API_KEY='AIzaSyDgTjJToRF0sC39Bt45BD960ru0Ax7j8FE';
@@ -32,12 +36,17 @@ class App extends Component {
 
 
   render() {
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)},300);
     return <div>
-      <div id="wrapper">
-        <TopBanner id="second" />
-        <Imageslot id="first" />
-      </div>
+      <section className="wrapper">
+      <div ><Imageslot /></div>
+      <div ><TopBanner /></div>
+      </section>
+      <SearchBar onSearchTermChange={videoSearch}/>
       <VideoDetail video={this.state.selectedVideo} />
+      <VideoList
+        onVideoSelect={selectedVideo => this.setState({selectedVideo})}
+        videos={this.state.videos} />
       </div>
   }
 }
